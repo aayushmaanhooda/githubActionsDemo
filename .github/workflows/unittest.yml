@@ -3,10 +3,10 @@ name: Python CI # workflow name
 on: # trigger
     push: # event
         branches: 
-            - main
+            - master
     pull_request: # event 
         branches: 
-            - main
+            - master
 
         
 jobs: # particalur job
