@@ -1,0 +1,38 @@
+name: Python CI # workflow name
+
+on: # trigger
+    push: # event
+        branches: 
+            - main
+    pull_request: # event 
+        branches: 
+            - main
+
+        
+jobs: # particalur job
+    test: # job name
+        runs-on: ubuntu-latest # runner
+        steps: #differernt steps
+            #step 1
+            - name: Checkout to working
+              uses: actions/checkout@v2
+            
+            #step 2
+            - name: Setup python env
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.13'
+            
+            #step 3
+            - name: Install dependencies
+              run: uv sync 
+            
+            #step 4
+            - name: Run tests
+              run: pytest
+            
+
+
+
+            
+
